@@ -11,7 +11,6 @@ function App() {
   useEffect(async () => {
     const response = await fetch('https://api.github.com/users/asr-alexandresilva/repos');
     const data = await response.json();
-    console.log(data)
 
     const repositoriesGitHubFavorites = localStorage.getItem('repositoriesGitHubFavorites');
     if (repositoriesGitHubFavorites !== null) {
