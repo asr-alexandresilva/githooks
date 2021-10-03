@@ -1,8 +1,9 @@
-# Getting Started with Create React App
+# Projeto React utilizando Hooks, Styled Components e Font Awesome
+Projeto lista meus repositórios, e permite favorita-los e acessa-los no GitHub.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-# Getting Started with Create React App
 
 ## Available Scripts
 
