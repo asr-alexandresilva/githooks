@@ -30,6 +30,13 @@ export const ContainerRepo = styled.div`
         align-items: center;
     }
 
+    ul li a{
+        color: #000000;
+    }
+    ul li a:hover{
+        color: #535353;
+    }
+
     button{
         border: none;
         background-color: #ffffff;

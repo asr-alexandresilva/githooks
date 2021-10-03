@@ -11,6 +11,7 @@ function App() {
   useEffect(async () => {
     const response = await fetch('https://api.github.com/users/asr-alexandresilva/repos');
     const data = await response.json();
+    console.log(data)
 
     const repositoriesGitHubFavorites = localStorage.getItem('repositoriesGitHubFavorites');
     if (repositoriesGitHubFavorites !== null) {
@@ -52,10 +53,7 @@ function App() {
       <ul>
         {repositories.map(repo => (
           <li key={repo.id}>
-            <span>
-              {repo.name}
-              {repo.favorite && <FontAwesomeIcon className="iconFavorite" icon={faStar} />}
-            </span>
+            <a href={repo.html_url} target="_blank">{repo.name} {repo.favorite && <FontAwesomeIcon className="iconFavorite" icon={faStar} />}</a>
             <button type="button" onClick={() => handdleFavorite(repo.id)}>Favoritar</button>
           </li>
         ))}
