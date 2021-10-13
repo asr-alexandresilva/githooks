@@ -51,4 +51,25 @@ export const ContainerRepo = styled.div`
         color: #EEBE1F;
         margin-left: 10px;
     }
+
+
+    .containerActionsRepo{
+        display: flex;
+        align-items: center;
+    }
+
+    .containerActionsRepo .formAvalicao label{
+        margin-right:10px;
+        font-weight: 500;
+    }
+
+    .containerActionsRepo .formAvalicao select{
+        min-width: 40px;
+        margin-right:15px;
+        border-radius: 5px;
+        border: none;
+        padding: 5px 10px;
+        box-shadow: 0px 2px 5px #00000036;
+        outline: none;
+    }
 `
