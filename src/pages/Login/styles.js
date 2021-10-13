@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+
     width: 50%;
-    min-height: 50vh;
+    min-height: 97vh;
     margin: auto;
     background-color: #FFFFFF;
     display: flex;
@@ -13,8 +14,23 @@ export const Container = styled.div`
 
     .title{
         text-align: center;
-        margin: 20px;
-        margin-top: 0;
+        margin: 10px;
+    }
+
+    .subTitle{
+        margin-bottom: 30px;
+        width: 80%;
+        text-align: center;
+    }
+
+    .subTitle span{
+        color: #686868;
+        font-style: italic;
+    }
+
+    .iconFavorite{
+        color: #EEBE1F;
+        margin-left: 10px;
     }
 
     .contentLogin{
@@ -22,5 +38,9 @@ export const Container = styled.div`
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+
+    @media(max-width: 768px) {
+        width: 100%;
     }
 `

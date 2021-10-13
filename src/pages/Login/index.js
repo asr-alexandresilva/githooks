@@ -3,6 +3,10 @@ import * as S from './styles';
 import GoogleLogin from 'react-google-login';
 import { useHistory } from "react-router-dom";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
+
 function Login() {
     const [userLogin, setUserLogin] = useState({ name: '', email: '', imageUrl: '', isLoggedIn: false });
     let history = useHistory();
@@ -10,7 +14,7 @@ function Login() {
         try {
             if (typeof response.accessToken !== 'undefined') {
                 const { profileObj: { name, email, imageUrl }, tokenObj } = response;
-                
+
                 const loggedUser = {
                     name: name,
                     email: email,
@@ -38,7 +42,8 @@ function Login() {
     return (
         <S.Container>
             <div className="contentLogin">
-            <h1 className="title">Login</h1>
+                <h1 className="title">Login</h1>
+                <h3 className="subTitle"><FontAwesomeIcon icon={faGithub} /> Repositórios <span>Favoritos Alexandre Silva <FontAwesomeIcon className="iconFavorite" icon={faStar} /></span></h3>
                 <GoogleLogin
                     clientId="566573102654-q64ko73loqd4c9q60vsgl64f9rmeucg7.apps.googleusercontent.com"
                     buttonText="Continuar com Google"
