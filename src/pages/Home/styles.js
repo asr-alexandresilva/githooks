@@ -1,11 +1,14 @@
 import styled from 'styled-components';
 
 export const ContainerRepo = styled.div`
-    padding: 0px 5px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 2px 3px #00000036;
 
     h2{
-        margin: 20px 12px;
+        margin: 10px 12px;
+        margin-bottom: 25px;
         text-align: center;
     }
     h2 span{
