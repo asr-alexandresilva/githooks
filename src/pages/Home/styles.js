@@ -75,4 +75,22 @@ export const ContainerRepo = styled.div`
         box-shadow: 0px 2px 5px #00000036;
         outline: none;
     }
+
+    @media(max-width: 768px) {
+        ul{
+            border-top: 1px solid silver;
+            padding-top: 20px;
+        }
+
+        ul li{
+            flex-direction: column;
+            margin: 5px 0;
+            border-radius: 10px;
+        }
+
+        ul li a{
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+    }
 `

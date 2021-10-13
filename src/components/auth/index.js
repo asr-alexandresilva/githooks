@@ -1,13 +1,18 @@
 import React from "react";
 import { Route, Redirect } from 'react-router-dom';
-import { useGoogleLogin } from 'react-google-login';
 
 function PrivateRoute({ component: Component, ...rest }) {
-    const {isSignedIn} = useGoogleLogin({isSignedIn: true});
 
     const authUser = () => {
-        console.log(isSignedIn)
-        return true;
+        let userIsLoggedIn = false;
+        let userData = sessionStorage.getItem("userData");
+        if (userData != null) {
+            userData = JSON.parse(userData);
+            if (userData.isLoggedIn) {
+                userIsLoggedIn = true;
+            }
+        }
+        return userIsLoggedIn;
     }
 
     return (
