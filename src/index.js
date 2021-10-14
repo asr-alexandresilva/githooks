@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Routes from './routes';
 import { createGlobalStyle } from 'styled-components';
+import { Provider } from 'react-redux';
+
+import store from './store';
 
 const GlobalStyle = createGlobalStyle`
 *{
@@ -15,7 +18,9 @@ const GlobalStyle = createGlobalStyle`
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle bodyColor="#F2F7FA"></GlobalStyle>
-    <Routes></Routes>
+    <Provider store={store}>
+      <Routes></Routes>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

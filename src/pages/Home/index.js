@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import * as S from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { useSelector } from 'react-redux';
 
 function Home() {
   const [repositories, setRepositories] = useState([]);
   const [avaliations, setAvaliations] = useState([]);
+  const user = useSelector(state => state.data);
+  console.log(user)
 
   useEffect(async () => {
     const response = await fetch('https://api.github.com/users/asr-alexandresilva/repos');
@@ -90,7 +93,15 @@ function Home() {
 
   return (
     <S.ContainerRepo>
-      <h2> <FontAwesomeIcon icon={faGithub} /> Repositórios Favoritos <span>Alexandre Silva<FontAwesomeIcon className="iconFavorite" icon={faStar} /></span></h2>
+      <div className="contentTitle">
+        <h2> <FontAwesomeIcon icon={faGithub} /> Repositórios Favoritos <span>Alexandre Silva<FontAwesomeIcon className="iconFavorite" icon={faStar} /></span></h2>
+        {user.name != '' &&
+          <div className="contentInfoLogin">
+            <img src={user.imageUrl} alt="Imagem login"></img>
+            <p>{user.name}</p>
+          </div>
+        }
+      </div>
       <ul>
         {repositories.map(repo => (
           <li key={repo.id}>

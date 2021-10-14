@@ -76,6 +76,24 @@ export const ContainerRepo = styled.div`
         outline: none;
     }
 
+    .contentTitle{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contentInfoLogin img{
+        max-width: 40px;
+        border-radius: 100%;
+        margin: auto;
+        display: flex;
+    }
+
+    .contentInfoLogin p{
+        font-size: 12px;
+        margin-top: 5px;
+        text-align: center;
+    }
+
     @media(max-width: 768px) {
         ul{
             border-top: 1px solid silver;

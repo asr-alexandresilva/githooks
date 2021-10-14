@@ -8,7 +8,6 @@ import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 function Login() {
-    const [userLogin, setUserLogin] = useState({ name: '', email: '', imageUrl: '', isLoggedIn: false });
     let history = useHistory();
     const authGoogle = (response, error) => {
         try {
@@ -23,22 +22,15 @@ function Login() {
                 }
 
                 sessionStorage.setItem("userData", JSON.stringify(loggedUser));
-                setUserLogin(loggedUser);
-
                 history.push("/");
             } else {
                 throw new Error('Erro ao efetuar login ou usuario deslogado.');
             }
         } catch (error) {
             sessionStorage.removeItem("userData");
-            setUserLogin({
-                name: '',
-                email: '',
-                imageUrl: '',
-                isLoggedIn: false
-            });
         }
     }
+
     return (
         <S.Container>
             <div className="contentLogin">
